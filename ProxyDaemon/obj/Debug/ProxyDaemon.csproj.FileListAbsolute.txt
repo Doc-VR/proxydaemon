@@ -1,0 +1,12 @@
+D:\CPPDev\FromScratch\HelloWold\ProxyDaemon\ProxyDaemon\bin\Debug\ProxyDaemon.exe.config
+D:\CPPDev\FromScratch\HelloWold\ProxyDaemon\ProxyDaemon\bin\Debug\ProxyDaemon.exe
+D:\CPPDev\FromScratch\HelloWold\ProxyDaemon\ProxyDaemon\bin\Debug\ProxyDaemon.pdb
+D:\CPPDev\FromScratch\HelloWold\ProxyDaemon\ProxyDaemon\obj\Debug\ProxyDaemon.exe
+D:\CPPDev\FromScratch\HelloWold\ProxyDaemon\ProxyDaemon\obj\Debug\ProxyDaemon.pdb
+D:\CPPDev\FromScratch\HelloWold\ProxyDaemon\ProxyDaemon\obj\Debug\ProxyDaemon.csprojResolveAssemblyReference.cache
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\bin\Debug\ProxyDaemon.exe.config
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\obj\Debug\ProxyDaemon.csprojResolveAssemblyReference.cache
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\bin\Debug\ProxyDaemon.exe
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\bin\Debug\ProxyDaemon.pdb
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\obj\Debug\ProxyDaemon.exe
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\obj\Debug\ProxyDaemon.pdb

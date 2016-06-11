@@ -1,0 +1,5 @@
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\bin\Release\ProxyDaemon.exe.config
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\bin\Release\ProxyDaemon.exe
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\bin\Release\ProxyDaemon.pdb
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\obj\Release\ProxyDaemon.exe
+C:\Users\Ibrahim\Documents\Visual Studio 2015\Projects\ProxyDaemon\ProxyDaemon\obj\Release\ProxyDaemon.pdb
