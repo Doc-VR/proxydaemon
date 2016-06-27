@@ -10,7 +10,7 @@ namespace ProxyDaemon
         static void Main(string[] args)
         {
 
-            Config xmlConfig = new Config();
+           
 
             // get local ip adress 
             var host = Dns.GetHostEntry(Dns.GetHostName());
@@ -23,8 +23,9 @@ namespace ProxyDaemon
                 {
                     // check if the ip equals to the ip address of entreprise proxy 
                     // xmlConfig.getIP()
-                    // 192.168.0.39
-                    if (ip.ToString().Equals("8.8.8.8"))
+                    // 192.168.0.39*
+                    // 10.121.61.145 my current AFPA IP
+                    if (ip.ToString().Contains("10.121"))
                     {
 #if DEBUG
                         Console.WriteLine("AFPA proxy IP has been detected ");
@@ -34,7 +35,7 @@ namespace ProxyDaemon
                         {
                             Proxy.enableProxy();
 
-                            if (Git.isGitInstalled())
+                            if (Git.isInstalled())
                             {
                                 Git.enableHTTPProxy();
                             }
