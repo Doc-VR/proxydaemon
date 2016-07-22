@@ -22,7 +22,6 @@ namespace ProxyDaemon
                 if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
                 {
                     // check if the ip equals to the ip address of entreprise proxy 
-                    // xmlConfig.getIP()
                     // 192.168.0.39*
                     // 10.121.61.145 my current AFPA IP
                     if (ip.ToString().Contains("10.121"))
@@ -37,13 +36,10 @@ namespace ProxyDaemon
 
                             if (Git.isInstalled())
                             {
-                                Git.enableHTTPProxy();
+                                if (Git.enableHTTPProxy()) Console.WriteLine("Git Http.proxy ON");
                             }
 
-                            if(Npm.isInstalled())
-                            {
-                                Npm.enableHTTPProxy();
-                            }
+                          
                         }
                         else
                         {
@@ -61,13 +57,10 @@ namespace ProxyDaemon
 
                             if (Git.isInstalled())
                             {
-                                Git.disableHTTPProxy();
+                                if(Git.disableHTTPProxy()) Console.WriteLine("Git Http.proxy OFF");
                             }
 
-                            if (Npm.isInstalled())
-                            {
-                                Npm.disableHTTPProxy();
-                            }
+                        
                         }
                         else
                         {
