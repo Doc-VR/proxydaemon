@@ -50,7 +50,7 @@ namespace ProxyDaemon
             Git.startInfo = new ProcessStartInfo();
             Git.startInfo.WindowStyle = ProcessWindowStyle.Hidden;
             Git.startInfo.FileName = "git.exe";
-            Git.startInfo.Arguments = "git config --global --unset http.proxy";
+            Git.startInfo.Arguments = "config --global --unset http.proxy";
             Git.process.StartInfo = Git.startInfo;
             Git.process.Start();
 #if DEBUG
