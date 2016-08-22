@@ -34,7 +34,7 @@ namespace ProxyDaemon
                         {
                             Proxy.enableProxy();
 
-                            if (Git.isInstalled())
+                            if (!Git.isInstalled())
                             {
                                 if (Git.enableHTTPProxy()) Console.WriteLine("Git Http.proxy ON");
                             }
