@@ -3,6 +3,7 @@
 #endif
 
 #include<winsock2.h>
+#include<windows.h>
 #include<stdio.h>
 
 #include "proxy.h"
@@ -14,25 +15,44 @@ int isAFPAIp();
 
 int main()
 {
+
+	while(1){
+
 	WSADATA wsaData;
 
 	if(WSAStartup(MAKEWORD(2,2), &wsaData) != 0)
 		return 1990; // Year birth as error ;) 
-
+	
 	// if IP AFPA and Windows Proxy OFF 
 	if(isAFPAIp() > 0 && isWindowsProxyEnabled() < 1)
 	{
 		if(enableWindowsProxy() == 1)
 			printf("Windows proxy has been enabled\n");
+
+
+		if(isGitInstalled() == 1)
+			if((int)enableHTTPProxy() > 32)
+				printf("Git HTTP proxy has been enabled\n");
+
 	}
 	// no IP AFPA and Windows Proxy ON
 	else if(isAFPAIp() < 1 && isWindowsProxyEnabled() > 0)
 	{
 		if(disableWindowsProxy() == 1)
 			printf("Windows proxy has been disabled\n"); 
+
+		
+		
+		if(isGitInstalled() == 1)
+			if((int)disableHTTPProxy() > 32)
+				printf("Git HTTP proxy has been disabled\n");
 	}
 
 	WSACleanup();
+
+	Sleep(6000);
+
+	}
 	return 1;
 }
 
