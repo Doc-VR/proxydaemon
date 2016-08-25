@@ -10,5 +10,6 @@
 // My prototypes
 int isWindowsProxyEnabled();
 int enableWindowsProxy();
+int disableWindowsProxy();
 
 #endif

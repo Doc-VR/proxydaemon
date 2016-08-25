@@ -17,17 +17,20 @@ int main()
 	WSADATA wsaData;
 
 	if(WSAStartup(MAKEWORD(2,2), &wsaData) != 0)
-		return 999;
-		
+		return 1990; // Year birth as error ;) 
 
 	// if IP AFPA and Windows Proxy OFF 
 	if(isAFPAIp() > 0 && isWindowsProxyEnabled() < 1)
 	{
 		if(enableWindowsProxy() == 1)
-			printf("windows proxy has been enabled\n");
+			printf("Windows proxy has been enabled\n");
 	}
-	else
-		printf("fsdfsdfsdfs\n");
+	// no IP AFPA and Windows Proxy ON
+	else if(isAFPAIp() < 1 && isWindowsProxyEnabled() > 0)
+	{
+		if(disableWindowsProxy() == 1)
+			printf("Windows proxy has been disabled\n"); 
+	}
 
 	WSACleanup();
 	return 1;
@@ -38,7 +41,7 @@ int isAFPAIp()
 	char value[80];
 	int i;
 
-	// Get Systeme hostname
+	// Get systeme hostname
 	if(gethostname(value,sizeof(value)) == SOCKET_ERROR)
 		return -1;
 

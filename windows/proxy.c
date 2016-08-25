@@ -29,12 +29,17 @@ int isWindowsProxyEnabled()
 	return value;
 }
 
+/*
+ * Enable Windows Proxy
+ * return 1 if success, o if failed
+ */
 int enableWindowsProxy()
 {
 	
 
 	HKEY key;
-	//const BYTE pData = 1;
+	DWORD value = 0x00000001;
+
 	if(
 			RegOpenKeyEx
 			(
@@ -52,11 +57,60 @@ int enableWindowsProxy()
 					"ProxyEnable",
 					0,
 					REG_DWORD,
-					(BYTE*)"1",// 1 for enable
-					sizeof(BYTE)
+					(const BYTE*)&value,// 1 == enable
+					sizeof(value)
 					) == ERROR_SUCCESS
-		  ){ return 1; }
+		  )
+		{ 
+			RegCloseKey(key);
+			return 1;
+	       	}
 	}
 
+	RegCloseKey(key);
+
+	return 0;		
+}
+
+/*
+ * disable Windows Proxy
+ * return 1 if success, o if failed
+ */
+int disableWindowsProxy()
+{
+	
+
+	HKEY key;
+	DWORD value = 0x00000000;
+
+	if(
+			RegOpenKeyEx
+			(
+				HKEY_CURRENT_USER,
+		 		"SOFTWARE\\MICROSOFT\\WINDOWS\\CurrentVersion\\Internet Settings",
+		 		0,
+		 		0xF003F, //All access
+		 		&key
+			) == ERROR_SUCCESS
+	  )
+	{
+		if(
+				RegSetValueEx(
+					key,
+					"ProxyEnable",
+					0,
+					REG_DWORD,
+					(const BYTE*)&value,// 0 == disable
+					sizeof(value)
+					) == ERROR_SUCCESS
+		  )
+		{ 
+			RegCloseKey(key);
+			return 1;
+	        }
+
+	}
+
+	RegCloseKey(key);
 	return 0;		
 }
