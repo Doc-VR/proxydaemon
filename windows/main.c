@@ -13,7 +13,7 @@
 
 int isAFPAIp();
 
-int main()
+int WinMain(HINSTANCE hInstance, HINSTANCE hpInstance, LPSTR lpcmd, int nCmdshow)
 {
 
 	while(1){
