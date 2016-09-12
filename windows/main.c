@@ -11,10 +11,15 @@
 
 #pragma comment(lib,"ws2_32.lib")
 
+#define DEBUG 0
+
 int isAFPAIp();
 
-//int WinMain(HINSTANCE hInstance, HINSTANCE hpInstance, LPSTR lpcmd, int nCmdshow)
+#if DEBUG 
 int main()
+#else
+int WinMain(HINSTANCE hInstance, HINSTANCE hpInstance, LPSTR lpcmd, int nCmdshow)
+#endif
 {
 
 	while(1){
@@ -30,11 +35,9 @@ int main()
 		if(enableWindowsProxy() == 1)
 			printf("Windows proxy has been enabled\n");
 
-		printf("Retun value of isGitInstalled:  %d \n", isGitInstalled());
 
 		if(isGitInstalled() == 1)
 		{
-			printf("enable HTTP Proxy return code %d\n", (int)enableHTTPProxy());
 			if((int)enableHTTPProxy() > 32)
 				printf("Git HTTP proxy has been enabled\n");
 		}
@@ -50,7 +53,6 @@ int main()
 		
 		if(isGitInstalled() == 1)
 		{
-			printf("disable HTTP Proxy return code %d\n", (int)disableHTTPProxy());
 			if((int)disableHTTPProxy() > 32)
 				printf("Git HTTP proxy has been disabled\n");
 		}
