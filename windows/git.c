@@ -13,7 +13,7 @@ int isGitInstalled()
 			HKEY_LOCAL_MACHINE,
 			"SOFTWARE\\GitForWindows",
 			0,
-			0xF003F,
+			KEY_READ|KEY_WOW64_64KEY,
 			&hkey
 			);
 	
@@ -27,6 +27,9 @@ int isGitInstalled()
 		RegCloseKey(hkey);
 		return 0;
 	}
+
+
+	return ret;
 }
 
 HINSTANCE enableHTTPProxy()
